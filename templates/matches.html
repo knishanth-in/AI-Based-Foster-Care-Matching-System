@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h2>Foster Care Matching Results</h2>
+
+    {% for r in results %}
+    <div class="card">
+
+        <!-- CHILD -->
+        <h3>Child Profile</h3>
+        <p><strong>Name:</strong> {{ r.child.name }}</p>
+        <p><strong>Age:</strong> {{ r.child.age }}</p>
+        <p><strong>Behavior:</strong> {{ r.child.behavior }}</p>
+        <p><strong>Location:</strong> {{ r.child.location_type }}</p>
+        <p><strong>Needs:</strong> {{ r.child.needs }}</p>
+
+        <hr>
+
+        <!-- MATCHES -->
+        <h3>Top Matches</h3>
+
+        {% for m in r.matches %}
+        <div class="match 
+            {% if m.score >= 70 %}high
+            {% elif m.score >= 40 %}medium
+            {% else %}low
+            {% endif %}
+        " style="padding:10px; margin-bottom:10px;">
+
+            <p><strong>Family:</strong> {{ m.family }}</p>
+            <p><strong>Score:</strong> {{ m.score }}/100</p>
+            <p><strong>Compatibility:</strong> {{ m.label }}</p>
+
+            <p><strong>Reasons:</strong></p>
+            <ul>
+                {% for reason in m.reasons %}
+                <li>{{ reason }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+        {% endfor %}
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

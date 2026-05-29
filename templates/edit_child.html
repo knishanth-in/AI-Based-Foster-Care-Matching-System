@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="card">
+        <h2>Edit Child Profile</h2>
+        <p>Update the child details below</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="card">
+        <form method="POST">
+
+            <label>Name</label>
+            <input type="text" name="name" value="{{ child[1] }}" required>
+
+            <label>Age</label>
+            <input type="number" name="age" value="{{ child[2] }}" required>
+
+            <label>Gender</label>
+            <select name="gender">
+                <option {% if child[3]=='Male' %}selected{% endif %}>Male</option>
+                <option {% if child[3]=='Female' %}selected{% endif %}>Female</option>
+            </select>
+
+            <label>Behavior</label>
+            <select name="behavior">
+                <option {% if child[4]=='Calm' %}selected{% endif %}>Calm</option>
+                <option {% if child[4]=='Active' %}selected{% endif %}>Active</option>
+                <option {% if child[4]=='Sensitive' %}selected{% endif %}>Sensitive</option>
+                <option {% if child[4]=='Troubled' %}selected{% endif %}>Troubled</option>
+            </select>
+
+            <label>Location</label>
+            <select name="location_type">
+                <option {% if child[5]=='city' %}selected{% endif %}>city</option>
+                <option {% if child[5]=='town' %}selected{% endif %}>town</option>
+                <option {% if child[5]=='village' %}selected{% endif %}>village</option>
+            </select>
+
+            <label>Needs</label>
+            <select name="needs">
+                <option {% if child[6]=='education' %}selected{% endif %}>education</option>
+                <option {% if child[6]=='emotional' %}selected{% endif %}>emotional</option>
+                <option {% if child[6]=='medical' %}selected{% endif %}>medical</option>
+            </select>
+
+            <br><br>
+
+            <button type="submit">Update Child</button>
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

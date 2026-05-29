@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="card">
+        <h2>Add Child</h2>
+
+        <form method="POST">
+
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <label>Age</label>
+            <input type="number" name="age" required>
+
+            <label>Gender</label>
+            <select name="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <label>Behavior</label>
+            <select name="behavior">
+                <option>calm</option>
+                <option>active</option>
+                <option>sensitive</option>
+            </select>
+
+            <!-- 🔥 MISSING FIELD (CRITICAL) -->
+            <label>Location</label>
+            <select name="location_type" required>
+                <option value="city">City</option>
+                <option value="town">Town</option>
+                <option value="village">Village</option>
+            </select>
+
+            <!-- 🔥 MISSING FIELD (CRITICAL) -->
+            <label>Needs</label>
+            <select name="needs" required>
+                <option value="education">Education</option>
+                <option value="medical">Medical</option>
+                <option value="emotional">Emotional</option>
+            </select>
+
+            <button type="submit">Add Child</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

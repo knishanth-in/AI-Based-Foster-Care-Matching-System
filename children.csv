@@ -1,0 +1,11 @@
+name,age,gender,behavior,location_type,needs
+Rohan,8,Male,calm,city,education
+Arjun,12,Male,active,town,emotional
+Meena,6,Female,troubled,village,medical
+Kiran,10,Male,calm,city,education
+Rahul,14,Male,active,town,emotional
+Lakshmi,9,Female,calm,village,education
+Vikram,11,Male,troubled,city,emotional
+Ananya,5,Female,active,town,medical
+Suresh,13,Male,calm,city,education
+Divya,7,Female,active,village,emotional

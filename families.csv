@@ -1,0 +1,11 @@
+name,language,environment,parenting,special_support,min_age,max_age,location_type,preferred_behavior,support_type,capacity
+Ravi Family,English,calm,supportive,yes,5,12,city,calm,education,2
+Anita Family,Hindi,active,supportive,no,0,10,town,any,medical,1
+Khan Family,Urdu,active,strict,yes,6,14,city,active,emotional,2
+Reddy Family,Kannada,calm,supportive,no,3,10,village,calm,medical,0
+Sharma Family,Hindi,active,strict,yes,10,16,city,any,education,3
+Mehta Family,Gujarati,calm,supportive,yes,4,12,town,any,education,2
+Rao Family,Kannada,active,strict,no,6,15,city,troubled,emotional,1
+Patel Family,Gujarati,calm,supportive,yes,5,11,village,calm,education,2
+Das Family,Bengali,active,supportive,no,2,8,town,active,medical,1
+Iyer Family,Tamil,calm,supportive,yes,7,13,city,any,education,2

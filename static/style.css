@@ -1,0 +1,210 @@
+ /* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+
+    background: linear-gradient(rgba(20,0,10,0.7), rgba(0,0,0,0.85)),
+    url("https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9")
+    no-repeat center center fixed;
+
+    background-size: cover;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #800020; /* maroon */
+    padding: 18px 40px;
+    color: white;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+
+/* NAV LINKS */
+.nav-links a {
+    margin-left: 22px;
+    text-decoration: none;
+    color: #f3cfcf;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 3px;
+}
+
+/* LOGOUT STYLES */
+.logout-user {
+    color: #ffb3b3;
+    font-weight: 600;
+}
+
+.logout-user:hover {
+    color: #ffffff;
+}
+
+.logout-admin {
+    color: #ff6666;
+    font-weight: 600;
+}
+
+.logout-admin:hover {
+    color: #ffffff;
+}
+
+/* ADMIN BADGE */
+.admin-badge {
+    background: #2b000b;
+    color: #ffcccc;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-left: 10px;
+    font-size: 11px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 24px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    border-left: 6px solid #800020;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* MATCH COLORS */
+.match {
+    border-left: 6px solid #800020;
+}
+
+.high {
+    border-left-color: #800020;
+}
+
+.medium {
+    border-left-color: #a52a2a;
+}
+
+.low {
+    border-left-color: #2b000b;
+}
+
+/* FORM INPUTS */
+input, select {
+    width: 100%;
+    padding: 11px;
+    margin: 10px 0;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 1px solid #800020;
+    box-shadow: 0 0 5px rgba(128, 0, 32, 0.3);
+}
+
+/* BUTTON */
+button {
+    background: #800020;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background: #5a0016; /* burgundy */
+    transform: scale(1.02);
+}
+
+/* HEADINGS */
+h2 {
+    color: #2b000b;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+h3 {
+    color: #400010;
+    margin-bottom: 8px;
+}
+
+/* TEXT */
+p {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* LIST */
+ul {
+    padding-left: 18px;
+    margin-top: 6px;
+}
+
+li {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 18px;
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 30px;
+}
+
+/* SMALL SCREEN */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 8px 10px 0 0;
+    }
+}

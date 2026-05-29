@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="card">
+        <h2>Admin Panel</h2>
+        <p>Manage children and family records efficiently</p>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="card">
+        <form action="/search" method="GET" class="search-bar">
+            <input type="text" name="q" placeholder="Search by name..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- CHILDREN TABLE -->
+    <div class="card">
+        <h3>Children Data</h3>
+
+        {% if children %}
+        <table class="admin-table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Behavior</th>
+                <th>Location</th>
+                <th>Needs</th>
+                <th>Actions</th>
+            </tr>
+
+            {% for c in children %}
+            <tr>
+                <td>{{ c.name }}</td>
+                <td>{{ c.age }}</td>
+                <td>{{ c.gender }}</td>
+                <td>{{ c.behavior }}</td>
+                <td>{{ c.location_type }}</td>
+                <td>{{ c.needs }}</td>
+
+                <td class="actions">
+                    <a href="/edit_child/{{ c.id }}">
+                        <button>Edit</button>
+                    </a>
+
+                    <a href="/delete_child/{{ c.id }}"
+                       onclick="return confirm('Delete this child?')">
+                        <button class="danger">Delete</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% else %}
+            <p>No children data available</p>
+        {% endif %}
+    </div>
+
+    <!-- FAMILY TABLE -->
+    <div class="card">
+        <h3>Families Data</h3>
+
+        {% if families %}
+        <table class="admin-table">
+            <tr>
+                <th>Name</th>
+                <th>Language</th>
+                <th>Environment</th>
+                <th>Parenting</th>
+                <th>Location</th>
+                <th>Behavior</th>
+                <th>Support</th>
+                <th>Capacity</th>
+                <th>Actions</th>
+            </tr>
+
+            {% for f in families %}
+            <tr>
+                <td>{{ f.name }}</td>
+                <td>{{ f.language }}</td>
+                <td>{{ f.environment }}</td>
+                <td>{{ f.parenting }}</td>
+                <td>{{ f.location_type }}</td>
+                <td>{{ f.preferred_behavior }}</td>
+                <td>{{ f.support_type }}</td>
+                <td>{{ f.capacity }}</td>
+
+                <td class="actions">
+
+                    <!-- Add edit later if needed -->
+                    <!-- <a href="/edit_family/{{ f.id }}"><button>Edit</button></a> -->
+
+                    <a href="/delete_family/{{ f.id }}"
+                       onclick="return confirm('Delete this family?')">
+                        <button class="danger">Delete</button>
+                    </a>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% else %}
+            <p>No family data available</p>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

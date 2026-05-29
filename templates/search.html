@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="card">
+        <h2>Search</h2>
+        <p>Find children or families by name</p>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="card">
+        <form action="/search" method="GET" style="display:flex; gap:10px;">
+            <input type="text" name="query" placeholder="Enter name..." value="{{ query or '' }}" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- RESULTS -->
+    {% if query %}
+
+        <!-- CHILD RESULTS -->
+        <div class="card">
+            <h3>Children Results</h3>
+
+            {% if children %}
+                {% for c in children %}
+                <div class="card" style="margin-top:10px;">
+                    <p><strong>Name:</strong> {{ c.name }}</p>
+                    <p><strong>Age:</strong> {{ c.age }}</p>
+                    <p><strong>Behavior:</strong> {{ c.behavior }}</p>
+                    <p><strong>Location:</strong> {{ c.location_type }}</p>
+                    <p><strong>Needs:</strong> {{ c.needs }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No children found</p>
+            {% endif %}
+        </div>
+
+        <!-- FAMILY RESULTS -->
+        <div class="card">
+            <h3>Family Results</h3>
+
+            {% if families %}
+                {% for f in families %}
+                <div class="card" style="margin-top:10px;">
+                    <p><strong>Name:</strong> {{ f.name }}</p>
+                    <p><strong>Location:</strong> {{ f.location_type }}</p>
+                    <p><strong>Preferred Behavior:</strong> {{ f.preferred_behavior }}</p>
+                    <p><strong>Support:</strong> {{ f.support_type }}</p>
+                    <p><strong>Capacity:</strong> {{ f.capacity }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No families found</p>
+            {% endif %}
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

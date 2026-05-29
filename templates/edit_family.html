@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <div class="card">
+        <h2>Edit Family</h2>
+        <p>Update family details</p>
+    </div>
+
+    <div class="card">
+        <form method="POST">
+
+            <input type="text" name="name" placeholder="Name" value="{{ family.name }}" required>
+
+            <input type="text" name="language" placeholder="Language" value="{{ family.language }}">
+
+            <input type="text" name="environment" placeholder="Environment" value="{{ family.environment }}">
+
+            <input type="text" name="parenting" placeholder="Parenting Style" value="{{ family.parenting }}">
+
+            <input type="text" name="special_support" placeholder="Special Support" value="{{ family.special_support }}">
+
+            <input type="number" name="min_age" placeholder="Min Age" value="{{ family.min_age }}">
+
+            <input type="number" name="max_age" placeholder="Max Age" value="{{ family.max_age }}">
+
+            <input type="text" name="location_type" placeholder="Location" value="{{ family.location_type }}">
+
+            <input type="text" name="preferred_behavior" placeholder="Preferred Behavior" value="{{ family.preferred_behavior }}">
+
+            <input type="text" name="support_type" placeholder="Support Type" value="{{ family.support_type }}">
+
+            <input type="number" name="capacity" placeholder="Capacity" value="{{ family.capacity }}">
+
+            <button type="submit">Update Family</button>
+
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

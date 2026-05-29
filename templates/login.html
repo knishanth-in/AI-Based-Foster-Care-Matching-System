@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="card">
+        <h2 style="text-align:center;">Admin Login</h2>
+
+        <!-- ERROR MESSAGE -->
+        {% if error %}
+        <p style="color: red; text-align: center; margin-bottom: 10px; font-weight: 500;">
+            {{ error }}
+        </p>
+        {% endif %}
+
+        <form method="POST">
+
+            <!-- PASSWORD FIELD WITH EYE TOGGLE -->
+            <div style="position:relative;">
+                <input type="password" id="password" name="password"
+                       placeholder="Enter admin password" required
+                       style="width:100%; padding-right:40px;">
+
+                <span onclick="togglePassword()"
+                      style="position:absolute; right:10px; top:50%; transform:translateY(-50%);
+                             cursor:pointer; font-size:18px;">
+                    👁
+                </span>
+            </div>
+
+            <button type="submit" style="width:100%; margin-top:10px;">
+                Login
+            </button>
+        </form>
+
+        <!-- SMALL NOTE -->
+        <p style="text-align:center; font-size:12px; color:#6b7280; margin-top:10px;">
+            Authorized access only
+        </p>
+    </div>
+</div>
+
+<!-- PASSWORD TOGGLE SCRIPT -->
+<script>
+function togglePassword() {
+    var input = document.getElementById("password");
+    if (input.type === "password") {
+        input.type = "text";
+    } else {
+        input.type = "password";
+    }
+}
+</script>
+
+{% endblock %}

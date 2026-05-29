@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="card" style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+            <h2>Dashboard</h2>
+            <p>Welcome, <strong>{{ username }}</strong></p>
+        </div>
+
+        <a href="/user_logout">
+            <button style="background:#5a0016;">Logout</button>
+        </a>
+    </div>
+
+    <!-- STATS -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:15px;">
+        
+        <div class="card">
+            <h3>Total Children</h3>
+            <p style="font-size:22px; font-weight:600;">
+                {{ total_children }}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Total Families</h3>
+            <p style="font-size:22px; font-weight:600;">
+                {{ total_families }}
+            </p>
+        </div>
+
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="card" style="margin-top:20px;">
+        <h3>Quick Actions</h3>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+
+            <a href="/add_child">
+                <button>Add Child</button>
+            </a>
+
+            <a href="/add_family">
+                <button>Add Family</button>
+            </a>
+
+            <a href="/matches">
+                <button>View Matches</button>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="card" style="margin-top:20px;">
+        <h3>Search Records</h3>
+
+        <form action="/search" method="GET" style="display:flex; gap:10px;">
+            <input type="text" name="q" placeholder="Search child or family name..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

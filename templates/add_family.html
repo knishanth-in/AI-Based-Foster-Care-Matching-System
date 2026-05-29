@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="card">
+        <h2>Add Family</h2>
+
+        <form method="POST">
+
+            <label>Family Name</label>
+            <input type="text" name="name" required>
+
+            <label>Language</label>
+            <input type="text" name="language" required>
+
+            <label>Environment</label>
+            <select name="environment">
+                <option>calm</option>
+                <option>active</option>
+            </select>
+
+            <label>Parenting</label>
+            <select name="parenting">
+                <option>supportive</option>
+                <option>strict</option>
+            </select>
+
+            <label>Special Support</label>
+            <select name="special_support">
+                <option>yes</option>
+                <option>no</option>
+            </select>
+
+            <!-- 🔥 REQUIRED FIELDS -->
+            <label>Min Age</label>
+            <input type="number" name="min_age" required>
+
+            <label>Max Age</label>
+            <input type="number" name="max_age" required>
+
+            <label>Location</label>
+            <select name="location_type" required>
+                <option value="city">City</option>
+                <option value="town">Town</option>
+                <option value="village">Village</option>
+            </select>
+
+            <label>Preferred Behavior</label>
+            <select name="preferred_behavior">
+                <option value="calm">Calm</option>
+                <option value="active">Active</option>
+                <option value="any">Any</option>
+            </select>
+
+            <label>Support Type</label>
+            <select name="support_type">
+                <option value="education">Education</option>
+                <option value="medical">Medical</option>
+                <option value="emotional">Emotional</option>
+            </select>
+
+            <label>Capacity</label>
+            <input type="number" name="capacity" required>
+
+            <button type="submit">Add Family</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
